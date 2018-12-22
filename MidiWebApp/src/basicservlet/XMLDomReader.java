@@ -23,8 +23,5 @@ public class XMLDomReader {
 	    }
 	}
 	
-	public static Element getElementbyName(String name) {
-		
-	}
 
 }

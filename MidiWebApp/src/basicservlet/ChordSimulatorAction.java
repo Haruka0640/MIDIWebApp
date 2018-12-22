@@ -80,7 +80,9 @@ class ChordSimulatorAction implements Action{
     	//“ñ‰¹–ÚˆÈ~‚ğƒŠƒXƒg‚ÉŠi”[
     	//list‚Éî•ñ‚ğŠi”[‚·‚éˆ—‚ğ‹Lq
     	
+    	//“]‰ñ
     	
+    	//Ä¶
         for(SoundDTO obj: list) {
         	String keyName = obj.getKeyName();
         	int keyNumber = obj.getKeyNumber();

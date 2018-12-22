@@ -34,7 +34,7 @@ public class Control extends HttpServlet {
 		
 		private Action createAction(String name) {
 			if(name.equals("chordsimulator"){
-				return new ChordSimulatorAction;
+				return new ChordSimulatorAction();
 			}else {
 				return new MenuAction();
 			}
