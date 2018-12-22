@@ -11,16 +11,20 @@ import org.xml.sax.SAXException;
 
 public class XMLDomReader {
 
-	public static Document buildDocument(String file){
+	public static Document buildDocument(String path) throws XMLException{
 	    try {
 	        DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
 	        DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
-	        Document document = docBuilder.parse(file);
+	        Document document = docBuilder.parse(path);
 	        return document;
 	    } catch (ParserConfigurationException | SAXException | IOException ex) {
-	        System.out.println("the exception is: " + ex.toString());
+	        ex.printStackTrace();
+	    	throw new XMLException();
 	    }
-	    return null;
+	}
+	
+	public static Element getElementbyName(String name) {
+		
 	}
 
 }
