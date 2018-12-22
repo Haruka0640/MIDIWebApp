@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE notes [
+	<!ELEMENT notes (note+)>
+	<!ELEMENT note (number)>
+	<!ELEMENT note (#PCDATA)>
+	<!ELEMENT number (#PCDATA)>
+	<!ATTLIST notes title CDATA #IMPLIED>
+	<!ATTLIST note id ID #REQUIRED>
+]>
+
+<notes title="note numbers">
+	<note id="C">
+	  <number>0</number>
+	</note>
+	<note id="D">
+	  <number>2</number>
+	</note>
+	<note id="E">
+	  <number>4</number>
+	</note>
+	<note id="F">
+	  <number>5</number>
+	</note>
+	<note id="G">
+	  <number>7</number>
+	</note>
+	<note id="A">
+	  <number>9</number>
+	</note>
+	<note id="B">
+	  <number>11</number>
+	</note>
+</notes>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE chords [
+	<!ELEMENT chords (chord+)>
+	<!ELEMENT chord (longname,semitone+)>
+	<!ELEMENT longname (#PCDATA)>
+	<!ELEMENT semitone (#PCDATA)>
+	<!ATTLIST chords title CDATA #IMPLIED>
+	<!ATTLIST chord id ID #REQUIRED>
+]>
+
+<chords title="chord numbers">
+	
+	<chord id="M">
+	    <longname>major triad</longname>
+        <semitone>4</semitone>
+        <semitone>7</semitone>
+	</chord>
+	<chord id="7">
+	    <longname>seventh</longname>
+        <semitone>4</semitone>
+        <semitone>7</semitone>
+        <semitone>10</semitone>
+	</chord>
+	<chord id="M7">
+	    <longname>major seventh</longname>
+        <semitone>4</semitone>
+        <semitone>7</semitone>
+	    <semitone>11</semitone>
+	</chord>
+	<chord id="6">
+		<longname>sixth</longname>
+		<semitone>4</semitone>
+        <semitone>7</semitone>
+        <semitone>9</semitone>
+	</chord>
+	<chord id="m">
+	    <longname>minor triad</longname>
+        <semitone>3</semitone>
+        <semitone>7</semitone>
+	</chord>
+	<chord id="mM7">
+	    <longname>minor major seventh</longname>
+        <semitone>3</semitone>
+        <semitone>7</semitone>
+        <semitone>11</semitone>
+	</chord>
+	<chord id="m6">
+	    <longname>minor sixth</longname>
+        <semitone>3</semitone>
+        <semitone>7</semitone>
+        <semitone>9</semitone>
+	</chord>
+	<chord id="m7">
+  	    <longname>minor seventh</longname>
+        <semitone>3</semitone>
+        <semitone>7</semitone>
+        <semitone>10</semitone>
+	</chord>
+	<chord id="m7(flat5)">
+	    <longname>minor seventh on flat five</longname>
+        <semitone>3</semitone>
+        <semitone>6</semitone>
+        <semitone>10</semitone>
+	</chord>
+	<chord id="sus4">
+	    <longname>suspended fourth</longname>
+        <semitone>5</semitone>
+        <semitone>7</semitone>
+	</chord>
+	<chord id="7sus4">
+  	    <longname>seventh suspended fourth</longname>    
+        <semitone>5</semitone>
+        <semitone>7</semitone>
+   	    <semitone>10</semitone>
+	</chord>
+	<chord id="dim">
+	    <longname>diminished triad</longname>
+        <semitone>3</semitone>
+        <semitone>6</semitone>
+	</chord>
+	<chord id="dim7">
+	    <longname>diminished seventh</longname>
+        <semitone>3</semitone>
+        <semitone>6</semitone>
+        <semitone>9</semitone>
+	</chord>
+	<chord id="aug">
+	    <longname>augmented triad</longname>
+        <semitone>4</semitone>
+        <semitone>8</semitone>
+	</chord>
+	<chord id="aug7">
+	    <longname>augmented seventh</longname>
+        <semitone>4</semitone>
+        <semitone>8</semitone>
+       	<semitone>10</semitone>
+	</chord>
+
+</chords>
