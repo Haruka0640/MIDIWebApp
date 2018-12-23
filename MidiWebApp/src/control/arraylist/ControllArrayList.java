@@ -7,7 +7,8 @@ public class ControllArrayList {
 
 	public ArrayList<Object> invert(ArrayList<Object> list,int pattern){
 		
-    	Object baf;
+    	@SuppressWarnings("unused")
+		Object baf;
     	Object baf2;
     	int arrayLength;
     	

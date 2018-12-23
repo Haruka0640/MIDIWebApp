@@ -1,16 +1,16 @@
-package control;
+
 
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
 import control.action.*;
-import control.dto.*;
 import control.midi.*;
 import control.xmlreader.*;
 
 import javax.servlet.annotation.WebServlet;
 
+@SuppressWarnings("serial")
 @WebServlet("/control")
 public class Control extends HttpServlet {
 
@@ -39,6 +39,7 @@ public class Control extends HttpServlet {
 		}else {
 			rd = req.getRequestDispatcher("/WebContent/HTML/unhandlederror.html");
 		}
+		rd.forward(req, res);
 	}
 		
 	private Action createAction(String name) {
