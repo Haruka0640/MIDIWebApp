@@ -1,4 +1,4 @@
-package basicservlet;
+package control.xmlreader;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -6,7 +6,7 @@ import org.w3c.dom.Element;
 public class ReadNoteXML extends XMLDomReader{
 	String path; 
 	
-	ReadNoteXML(){
+	public ReadNoteXML(){
 		this.path = "/src/resource/notenumbers.xml";
 	}
 

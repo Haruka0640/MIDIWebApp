@@ -1,9 +1,15 @@
-package basicservlet;
+package control;
+
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
+
+import control.action.*;
+import control.dto.*;
+import control.midi.*;
+import control.xmlreader.*;
+
 import javax.servlet.annotation.WebServlet;
-import java.util.*;
 
 @WebServlet("/control")
 public class Control extends HttpServlet {
@@ -16,34 +22,32 @@ public class Control extends HttpServlet {
 		
 		String actionName = req.getParameter("action");
 		Action action = createAction(actionName);
+		
 		if (action != null) {
 			try {
 				if(action.check(req)){
-					String path = action.execute(path);
+					String path = action.execute(req);
 					rd = req.getRequestDispatcher(path);
 				}else {
 					rd = req.getRequestDispatcher("/WebContent/HTML/checkerror.html");
 				}
-			}catch(ChordSimulatorException e){
-				e.printStackTrace();
-				rd = req.getRequestDispatcher("/WebContent/HTML/chordsimulatorerror.html");
+			}catch(XMLException ex){
+				rd = req.getRequestDispatcher("/WebContent/HTML/xmlerror.html");
+			}catch(MIDIException ex) {
+				rd = req.getRequestDispatcher("/WebContent/HTML/midierror.html");
 			}
 		}else {
-			rd = req.getRequestDispatcher("/WebContent/HTML/systemerror.html");
+			rd = req.getRequestDispatcher("/WebContent/HTML/unhandlederror.html");
 		}
+	}
 		
-		private Action createAction(String name) {
-			if(name.equals("chordsimulator"){
-				return new ChordSimulatorAction();
-			}else {
-				return new MenuAction();
-			}
+	private Action createAction(String name) {
+		if(name.equals("chordsimulator")) {
+			return new ChordSimulatorAction();
+		}else {
+			return null;
 		}
+	}
 		
-
-			
-
-
-		}
 }
 

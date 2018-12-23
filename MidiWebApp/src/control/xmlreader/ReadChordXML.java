@@ -1,4 +1,4 @@
-package basicservlet;
+package control.xmlreader;
 
 import java.util.ArrayList;
 
@@ -7,18 +7,17 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-public class ReadChordXML extends ReadNoteXML{
+import control.dto.SoundDTO;
+
+public class ReadChordXML extends XMLDomReader{
 	String path; 
 	
-	ReadChordXML(){
+	public ReadChordXML(){
 		this.path = "src/resource/chordnumbers.xml";
 	}
 	
-    public ArrayList<SoundDTO> changeChordToNum(int RootKeyNumber,String chordName) throws XMLException {
-    	
-    	ArrayList<SoundDTO> list = new ArrayList<>();
-    	SoundDTO dto = new SoundDTO();
-    	
+    public ArrayList<SoundDTO> changeChordToNum(ArrayList<SoundDTO> list,int RootKeyNumber,String chordName) throws XMLException {
+    	   	
     	String keyName = null;
     	int keyNumber;
     	int dynamics = 100;
@@ -27,28 +26,26 @@ public class ReadChordXML extends ReadNoteXML{
     	try {
     		Document document = buildDocument(path);
     		Element chordElement = document.getElementById(chordName);
-    		NodeList semitonesNodeList = chordElement.getElementsByTagName("semitone");
-    		
+    		//å©Ç¬Ç©ÇÁÇ»Ç©Ç¡ÇΩèÍçáNullÇï‘Ç∑
     		if (chordElement == null) {
-    			return list;
+    			return null;
     		}
+        	NodeList semitoneNodeList = chordElement.getElementsByTagName("semitone");
+        	
+    		System.out.println(semitoneNodeList.getLength());
     		
-            for (int j = 0; j < semitonesNodeList.getLength(); j++) {
-        		Node semitoneNode = semitonesNodeList.item(j);
+            for (int j = 0; j < semitoneNodeList.getLength(); j++) {
+        		Node semitoneNode = semitoneNodeList.item(j);
         		if(semitoneNode.getNodeType() == Node.ELEMENT_NODE) {
         			Element semitoneElement = (Element)semitoneNode;
         			keyNumber = Integer.parseInt(semitoneElement.getTextContent());
         			keyNumber = keyNumber + RootKeyNumber;
-                	dto.setDynamics(dynamics);
-                	dto.setKeyName(keyName);
-                	dto.setKeyNumber(keyNumber);
-                	dto.setLength(length);
+                	SoundDTO dto = new SoundDTO(keyName, keyNumber, dynamics, length);
                 	list.add(dto);
     	    	}
         	}
     	}catch (NumberFormatException | NullPointerException | XMLException ex) {
     		throw new XMLException();
-    		
     	}
 
     	return list;   	

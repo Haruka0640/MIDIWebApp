@@ -1,12 +1,20 @@
-package basicservlet;
+package control.dto;
 
-class SoundDTO {
+public class SoundDTO {
 
 	private String keyName;
 	private int keyNumber;
 	private int dynamics;
 	private int length;
 	
+	
+	public SoundDTO(String keyName, int keyNumber, int dynamics, int length) {
+		this.keyName = keyName;
+		this.keyNumber = keyNumber;
+		this.dynamics = dynamics;
+		this.length = length;
+	}
+
 	public String getKeyName() {
 		return keyName;
 	}

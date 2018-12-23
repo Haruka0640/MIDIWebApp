@@ -1,6 +1,6 @@
-package basicservlet;
+package control.dto;
 
-class SoundForm {
+public class SoundForm {
 	
 	private String rootKey;
 	private int accidental;

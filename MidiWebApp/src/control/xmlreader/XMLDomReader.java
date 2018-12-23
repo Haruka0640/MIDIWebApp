@@ -1,4 +1,4 @@
-package basicservlet;
+package control.xmlreader;
 
 import java.io.IOException;
 
