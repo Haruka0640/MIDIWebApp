@@ -1,24 +1,24 @@
-package control.xmlreader;
+
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 public class ReadNoteXML extends XMLDomReader{
-	String path; 
+	private String XMLPath;
 	
-	public ReadNoteXML(){
-		this.path = "/src/resource/notenumbers.xml";
+	
+	public ReadNoteXML(String XMLPath){
+		this.XMLPath = XMLPath + "/notenumbers.xml";
 	}
-
+	
+	
     public int changeNoteToNum(String keyName,int octave) throws XMLException {
-    	 
+    	
     	int keyNumber = 0;
-    	//XMLファイルからキー番号を取得
     	try {
-    		Document document = buildDocument(path);
+    		Document document = buildDocument(XMLPath);
     		Element noteElement = document.getElementById(keyName);
-    		//見つからない場合は０を返す
-    		if(noteElement == null) {
+      		if(noteElement == null) {
     			return 0;
     		}
     		keyNumber = Integer.parseInt(noteElement.getElementsByTagName("number").item(0).getTextContent());
