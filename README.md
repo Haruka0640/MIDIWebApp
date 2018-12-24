@@ -1,4 +1,4 @@
-MIDIWebApp
+Chord-Simulator
 ====
 画面に入力された情報に従って和音を再生するWebアプリケーションです。
 
