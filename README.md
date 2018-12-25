@@ -1,6 +1,6 @@
 Chord-Simulator
 ====
-画面に入力された情報に従って和音を再生するWebアプリケーションです。
+画面に入力された情報に従って和音を再生するMVCモデルのWebアプリケーションです。
 
 ![diagram_chordsimulator](https://user-images.githubusercontent.com/44899712/50414428-e1cd8e80-0858-11e9-853c-687fd8085301.png)
 
@@ -10,5 +10,4 @@ Chord-Simulator
   
 ### デモ
 Heroku URL: https://midi-web-app-heroku.herokuapp.com/  
-※2018.12.24現在、Heroku環境でMIDI音源の再生ができず。
-画面のみ公開中
+※2018.12.24現在、Heroku環境でMIDI音源の再生ができないため、画面のみ公開中
